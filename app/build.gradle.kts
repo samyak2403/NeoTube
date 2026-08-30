@@ -59,7 +59,7 @@ android {
 
     flavorDimensions += "version"
     productFlavors {
-        create("foss") {
+        create("neotube") {
             dimension = "version"
             isDefault = true
             buildConfigField("Boolean", "UPDATER_ENABLED", "false")
