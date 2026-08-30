@@ -1,0 +1,20 @@
+AntiFeatures:
+  - NonFreeNet
+Categories:
+  - Multimedia
+License: GPL-3.0-or-later
+SourceCode: https://github.com/samyak2403/NeoTube
+IssueTracker: https://github.com/samyak2403/NeoTube/issues
+WebSite: https://github.com/samyak2403/NeoTube
+Donate: https://github.com/sponsors/samyak2403
+
+Summary: Ad-free video & music client with background play, downloads & SponsorBlock
+Description: |-
+  NeoTube is a modern, privacy-respecting video and music streaming client.
+  Features include background playback, Picture-in-Picture, SponsorBlock,
+  Return YouTube Dislike, offline downloads, and local recommendations.
+
+AutoUpdateMode: Version v%v
+UpdateCheckMode: Tags
+CurrentVersion: "1.0"
+CurrentVersionCode: 1

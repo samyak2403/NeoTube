@@ -1,0 +1,11 @@
+Initial release of NeoTube:
+• Privacy-focused video and music streaming without ads
+• Background and lock-screen playback
+• Picture-in-Picture (PiP) support
+• SponsorBlock integration to automatically skip sponsored segments
+• Return YouTube Dislike integration
+• DeArrow community thumbnails & titles
+• Shorts feed with auto-scroll mode
+• 100% on-device recommendation engine
+• Offline video and audio downloads
+• FOSS-compliant build ready for F-Droid and IzzyOnDroid

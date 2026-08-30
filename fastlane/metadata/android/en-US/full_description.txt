@@ -1,0 +1,18 @@
+NeoTube is a modern, privacy-focused open-source Android video and music streaming client designed to give you complete control and an uninterrupted viewing experience.
+
+Built with Kotlin and Jetpack Compose, NeoTube delivers seamless playback without ads, tracking, or mandatory Google accounts.
+
+Features:
+• Ad-free playback: No video ads or sponsored interruptions.
+• Background & Lock-Screen Audio: Listen to music or podcasts with the screen turned off.
+• Picture-in-Picture (PiP): Multitask while watching your favorite videos.
+• SponsorBlock: Automatically skip sponsored segments, intros, outros, and subscription reminders.
+• Return YouTube Dislike: View authentic dislike counts on every video.
+• DeArrow: Replaces sensationalized clickbait thumbnails and titles with community alternatives.
+• Shorts Feed: Smooth vertical scrolling for short-form content with auto-scroll support.
+• 100% On-Device Intelligence: Local recommendation engine that learns your interests privately without telemetry or server tracking.
+• Offline Downloads: Download videos and audio directly to your device storage.
+• Subtitles & Customization: Extensive subtitle formatting and dynamic Material You theme styles.
+• NewPipe Import/Export: Easily migrate subscriptions and playlists without account lock-in.
+
+NeoTube is 100% free and open-source software (FOSS) licensed under the GNU General Public License v3.0 (GPLv3).
