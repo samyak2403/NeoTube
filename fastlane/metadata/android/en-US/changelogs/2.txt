@@ -1,0 +1,4 @@
+Bug fixes and performance improvements:
+• Fixed compilation and updater dependency references across build variants
+• Improved export file naming for backup and engine data (neo_brain / neo_backup)
+• Enhanced overall app stability and playback performance
