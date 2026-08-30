@@ -1,0 +1,45 @@
+AntiFeatures:
+  NonFreeNet:
+    en-US: Depends on YouTube.
+Categories:
+  - Internet
+  - Multimedia
+  - Online Media Player
+License: GPL-3.0-or-later
+AuthorName: Samyak Kamble
+WebSite: https://github.com/samyak2403/NeoTube
+SourceCode: https://github.com/samyak2403/NeoTube
+IssueTracker: https://github.com/samyak2403/NeoTube/issues
+Changelog: https://github.com/samyak2403/NeoTube/releases
+Donate: https://github.com/sponsors/samyak2403
+
+AutoName: NeoTube
+Summary: Ad-free video & music streaming with background play and SponsorBlock
+Description: |-
+  NeoTube is a modern, privacy-respecting video and music streaming client for Android.
+
+  Features:
+  * Ad-free video and audio streaming
+  * Background and lock-screen playback
+  * Picture-in-Picture (PiP) mode
+  * SponsorBlock, Return YouTube Dislike & DeArrow
+  * Shorts feed with hands-free Auto-Scroll mode
+  * 100% on-device local recommendation engine
+  * Offline video and audio downloads
+  * 100% FOSS with zero tracking or Google accounts required
+
+RepoType: git
+Repo: https://github.com/samyak2403/NeoTube.git
+
+Builds:
+  - versionName: '1.0.1'
+    versionCode: 2
+    commit: v1.0.1
+    subdir: app
+    gradle:
+      - neotube
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: '1.0.1'
+CurrentVersionCode: 2
