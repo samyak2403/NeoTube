@@ -299,9 +299,9 @@ fun SettingsScreen(
         SettingSearchEntry(Icons.Outlined.NotificationsNone, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_notifications), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_notifications_subtitle), secNotifications, onNavigateToNotifications),
         SettingSearchEntry(Icons.Outlined.History, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_search_history), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_search_history_subtitle), secDataManagement, onNavigateToSearchHistory),
         SettingSearchEntry(Icons.Outlined.Schedule, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_time_management), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_time_management_subtitle), secDataManagement, onNavigateToTimeManagement),
-        SettingSearchEntry(Icons.Outlined.FileUpload, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_export_data), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_export_data_subtitle), secDataManagement) { exportLauncher.launch("echo_backup_${System.currentTimeMillis()}.json") },
+        SettingSearchEntry(Icons.Outlined.FileUpload, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_export_data), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_export_data_subtitle), secDataManagement) { exportLauncher.launch("neo_backup_${System.currentTimeMillis()}.json") },
         SettingSearchEntry(Icons.Outlined.FileDownload, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_import_data), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_import_data_subtitle), secDataManagement, onNavigateToImport),
-        SettingSearchEntry(Icons.Outlined.Psychology, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.export_engine_data), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.export_engine_data_subtitle), secDataManagement) { exportBrainLauncher.launch("echo_brain_${System.currentTimeMillis()}.json") },
+        SettingSearchEntry(Icons.Outlined.Psychology, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.export_engine_data), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.export_engine_data_subtitle), secDataManagement) { exportBrainLauncher.launch("neo_brain_${System.currentTimeMillis()}.json") },
         SettingSearchEntry(Icons.Outlined.Info, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_about_flow), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_about_flow_subtitle), secAbout, onNavigateToAbout),
         SettingSearchEntry(Icons.Outlined.BugReport, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_diagnostics), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_diagnostics_subtitle), secAbout, onNavigateToDiagnostics),
         SettingSearchEntry(Icons.Outlined.VolunteerActivism, androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_support), androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_support_subtitle), secAbout, onNavigateToDonations)
@@ -644,7 +644,7 @@ fun SettingsScreen(
                         icon = Icons.Outlined.FileUpload,
                         title = androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_export_data),
                         subtitle = androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.settings_item_export_data_subtitle),
-                        onClick = { exportLauncher.launch("echo_backup_${System.currentTimeMillis()}.json") }
+                        onClick = { exportLauncher.launch("neo_backup_${System.currentTimeMillis()}.json") }
                     )
                     HorizontalDivider(Modifier.padding(start = 56.dp), color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
                     SettingsItem(
@@ -658,7 +658,7 @@ fun SettingsScreen(
                         icon = Icons.Outlined.Psychology,
                         title = androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.export_engine_data),
                         subtitle = androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.export_engine_data_subtitle),
-                        onClick = { exportBrainLauncher.launch("echo_brain_${System.currentTimeMillis()}.json") }
+                        onClick = { exportBrainLauncher.launch("neo_brain_${System.currentTimeMillis()}.json") }
                     )
                 }
             }
