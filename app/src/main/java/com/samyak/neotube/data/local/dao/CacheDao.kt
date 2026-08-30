@@ -1,0 +1,63 @@
+package com.samyak.neotube.data.local.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Transaction
+import com.samyak.neotube.data.local.entity.MusicHomeCacheEntity
+import com.samyak.neotube.data.local.entity.MusicHomeChipEntity
+import com.samyak.neotube.data.local.entity.SubscriptionFeedEntity
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface CacheDao {
+    // Subscriptions
+    @Query("SELECT * FROM subscription_feed_cache ORDER BY timestamp DESC LIMIT 5000")
+    fun getSubscriptionFeed(): Flow<List<SubscriptionFeedEntity>>
+
+    /** Returns how many rows are currently in the cache. */
+    @Query("SELECT COUNT(*) FROM subscription_feed_cache")
+    suspend fun getSubscriptionFeedCount(): Int
+
+    /** Returns the most-recent cachedAt timestamp, or null when the table is empty. */
+    @Query("SELECT MAX(cachedAt) FROM subscription_feed_cache")
+    suspend fun getLatestCachedAt(): Long?
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertSubscriptionFeed(videos: List<SubscriptionFeedEntity>)
+
+    @Query("DELETE FROM subscription_feed_cache")
+    suspend fun clearSubscriptionFeed()
+
+    /**
+     * Atomically replace the entire subscription feed cache.
+     * Using @Transaction ensures Room emits exactly ONE Flow update for the whole
+     * clear+insert operation — no empty intermediate state that would blank the UI.
+     */
+    @Transaction
+    suspend fun replaceSubscriptionFeed(videos: List<SubscriptionFeedEntity>) {
+        clearSubscriptionFeed()
+        insertSubscriptionFeed(videos)
+    }
+
+    // Music
+    @Query("SELECT * FROM music_home_cache ORDER BY orderBy ASC")
+    fun getMusicHomeSections(): Flow<List<MusicHomeCacheEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertMusicHomeSections(sections: List<MusicHomeCacheEntity>)
+
+    @Query("DELETE FROM music_home_cache")
+    suspend fun clearMusicHomeCache()
+
+    // Music Chips
+    @Query("SELECT * FROM music_home_chips_cache ORDER BY orderBy ASC")
+    fun getMusicHomeChips(): Flow<List<MusicHomeChipEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertMusicHomeChips(chips: List<MusicHomeChipEntity>)
+
+    @Query("DELETE FROM music_home_chips_cache")
+    suspend fun clearMusicHomeChips()
+}
