@@ -1,6 +1,7 @@
 # NeoTube
 
 <div align="center">
+  <img src="fastlane/metadata/android/en-US/images/icon.png" alt="NeoTube Logo" width="120" style="border-radius: 24px;" />
 
   <h1>NeoTube</h1>
 
@@ -27,6 +28,22 @@
 **NeoTube** is built for users who value privacy, control, and performance. Powered by Jetpack Compose and ExoPlayer (Media3), NeoTube provides a distraction-free and ad-free viewing experience with no Google accounts, no tracking, and 100% on-device data storage.
 
 NeoTube is fully **FOSS**-compliant, designed to build cleanly for **F-Droid** and **IzzyOnDroid** repositories with disabled dependency metadata and zero proprietary tracking SDKs.
+
+---
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="19%" alt="Home Feed" />
+  &nbsp;
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="19%" alt="Video Player" />
+  &nbsp;
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="19%" alt="Shorts" />
+  &nbsp;
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="19%" alt="Search" />
+  &nbsp;
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="19%" alt="Subscriptions" />
+</p>
 
 ---
 
