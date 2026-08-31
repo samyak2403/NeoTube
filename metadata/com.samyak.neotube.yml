@@ -17,7 +17,7 @@ AutoName: NeoTube
 
 RepoType: git
 Repo: https://github.com/samyak2403/NeoTube.git
-Binaries:
+Binaries:  
   https://github.com/samyak2403/NeoTube/releases/download/v%v/app-neotube-release.apk
 
 Builds:
