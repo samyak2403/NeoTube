@@ -26,7 +26,8 @@ Builds:
     commit: 6bd4a397aeb5e93f2131127998862afe9df957a5
     subdir: app
     gradle:
-      - neotube
+      - yes
+    output: build/outputs/apk/neotube/release/*.apk
 
 AllowedAPKSigningKeys: f64e4c9d73db988eda995d0809b574bf59ed713802b0d21dbd999b1e92edc26d
 
