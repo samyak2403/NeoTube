@@ -23,7 +23,7 @@
 
 ---
 
-## 🌟 Overview
+## Overview
 
 **NeoTube** is built for users who value privacy, control, and performance. Powered by Jetpack Compose and ExoPlayer (Media3), NeoTube provides a distraction-free and ad-free viewing experience with no Google accounts, no tracking, and 100% on-device data storage.
 
@@ -31,7 +31,7 @@ NeoTube is fully **FOSS**-compliant, designed to build cleanly for **F-Droid** a
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 <p align="center">
   <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="19%" alt="Home Feed" />
@@ -47,9 +47,9 @@ NeoTube is fully **FOSS**-compliant, designed to build cleanly for **F-Droid** a
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-### 🎬 Video & Audio Playback
+### Video & Audio Playback
 - **Ad-Free Streaming**: Enjoy videos without annoying interruptions.
 - **Background & Lock Screen Playback**: Listen to audio or music seamlessly with the screen off or while multitasking.
 - **Picture-in-Picture (PiP)**: Pop-out video player to keep watching while using other apps.
@@ -58,34 +58,35 @@ NeoTube is fully **FOSS**-compliant, designed to build cleanly for **F-Droid** a
 - **Intuitive Gestures**: Swipe controls for volume, brightness, and fast-seeking.
 - **Subtitle Customization**: Customizable captions, size, and styling.
 
-### ⚡ Community Integrations
+### Community Integrations
 - **SponsorBlock**: Automatically skip sponsored segments, intros, outros, subscription reminders, and filler.
 - **Return YouTube Dislike (RYD)**: Displays accurate dislike counts and ratios on videos.
 - **DeArrow Support**: Replace sensationalized thumbnails and clickbait titles with community-submitted alternatives.
 
-### 📱 Shorts Experience
+### Shorts Experience
 - **Dedicated Shorts Feed**: Smooth vertical scrolling for short-form content.
 - **Auto-Scroll Mode**: Hands-free playback automatically scrolling to the next Short when the current one finishes.
 - **Interactive Controls**: Like, share, view comments, and bookmark favorite Shorts.
 
-### 🧠 On-Device Recommendation Engine
-- **100% Private**: Recommendation model runs entirely on your device without sending watch telemetry to external servers.
-- **Smart Adaptive Learning**: Learns preferences from watch time, likes, skips, and searches.
+### On-Device Recommendation Engine
+- **100% Private**: Heuristic recommendation model runs entirely on your device without sending watch telemetry to external servers.
+- **Smart Adaptive Learning**: Learns preferences from watch time, likes, skips, and searches using TF-IDF vector math.
 - **Topic Diversity Protection**: Prevents content fatigue and algorithmic echo chambers.
+- **No Cloud AI / No LLM**: Operates completely offline with deterministic algorithms; no generative AI or external AI services are used.
 
-### 📂 Library & Offline Media
+### Library & Offline Media
 - **Local Watch History & Playlists**: Manage playlists and history stored securely in a local Room database.
 - **Offline Downloads**: Download videos and audio for offline access.
 - **NewPipe Import/Export**: Effortlessly import subscriptions and playlists from NewPipe or export your data at any time.
 
-### 🛡️ Privacy & Freedom (FOSS)
+### Privacy & Freedom (FOSS)
 - **No Google Account Required**: Full functionality without needing a Google account or microG.
 - **No Telemetry**: No user tracking, analytics, or behavioral surveillance.
 - **IzzyOnDroid / F-Droid Ready**: Clean FOSS build variant without proprietary updaters or build metadata tracking.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **UI Framework**: [Jetpack Compose](https://developer.android.com/jetpack/compose) with Material Design 3
 - **Language**: [Kotlin](https://kotlinlang.org/) (Coroutines, Flow, Serialization)
@@ -98,7 +99,7 @@ NeoTube is fully **FOSS**-compliant, designed to build cleanly for **F-Droid** a
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Pre-built APKs
 Download the latest signed release APK directly from the [GitHub Releases](https://github.com/samyak2403/NeoTube/releases) page.
@@ -117,31 +118,25 @@ Download the latest signed release APK directly from the [GitHub Releases](https
    sdk.dir=/path/to/your/android/sdk
    ```
 
-3. **Build the FOSS Debug APK:**
+3. **Build the Neotube Release APK:**
    ```bash
-   ./gradlew assembleFossDebug
+   ./gradlew assembleNeotubeRelease
    ```
-
-4. **Build the FOSS Release APK:**
-   ```bash
-   ./gradlew assembleFossRelease
-   ```
-   The generated APK will be available in `app/build/outputs/apk/foss/release/`.
+   The generated APK will be available in `app/build/outputs/apk/neotube/release/`.
 
 ---
 
-## 🤝 Community & Support
+## Community & Support
 
 Have questions, suggestions, or found a bug? Join the community:
 
 - **Telegram Channel**: [@NeoTubeApp](https://t.me/NeoTubeApp)
 - **Issue Tracker**: [GitHub Issues](https://github.com/samyak2403/NeoTube/issues)
-- **Contact Developer**: [samyakkamble2408@gmail.com](mailto:samyakkamble2408@gmail.com)
-- **Instagram**: [@mr_samyakkamble](https://instagram.com/mr_samyakkamble)
+- **Contact Developer**: [samyakkamble6659@gmail.com](mailto:samyakkamble6659@gmail.com)
 
 ---
 
-## 💖 Support the Project
+## Support the Project
 
 If you appreciate NeoTube and want to support ongoing development:
 
@@ -150,7 +145,13 @@ If you appreciate NeoTube and want to support ongoing development:
 
 ---
 
-## 📄 License & Attribution
+## License & Attribution
 
 - **NeoTube** is licensed under the [GNU General Public License v3.0 (GPLv3)](LICENSE).
-- Powered by the incredible open-source [NewPipeExtractor](https://github.com/TeamNewPipe/NewPipeExtractor) project.
+- **Lineage & Acknowledgements**:
+  - Forked and inspired by [Flow](https://github.com/A-EDev/Flow) by A-EDev and [EchoTube](https://github.com/iad1tya/EchoTube) by iad1tya.
+  - Powered by the incredible open-source [NewPipeExtractor](https://github.com/TeamNewPipe/NewPipeExtractor) project.
+  - The recommendation engine (`FlowNeuroEngine` / `NeoTubeNeuroEngine`) is an algorithmic ranking system based on local TF-IDF vector math and topic weights, originally developed by the Flow project. It operates 100% locally and offline without external AI/LLM models or telemetry.
+- **FOSS & AI Transparency**:
+  - NeoTube is 100% human-crafted Free and Open Source Software (FOSS).
+  - No application code, core algorithms, or architecture was generated by AI/LLMs. Development complies strictly with the [IzzyOnDroid App Inclusion AI Policy](https://izzyondroid.org/docs/general/AppInclusionPolicy/).
