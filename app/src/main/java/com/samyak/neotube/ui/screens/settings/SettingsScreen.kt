@@ -481,7 +481,7 @@ fun SettingsScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // =================================================
-            // ECHO TUBE CONTROL CENTER
+            // NEOTUBE CONTROL CENTER
             // =================================================
             item { SectionHeader(text = androidx.compose.ui.res.stringResource(com.samyak.neotube.R.string.flow_control_center)) }
             item {
