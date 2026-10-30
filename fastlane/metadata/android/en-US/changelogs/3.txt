@@ -1,0 +1,4 @@
+F-Droid compliance update:
+• Removed REQUEST_INSTALL_PACKAGES and DOWNLOAD_WITHOUT_NOTIFICATION permissions
+• Streamlined manifest and background services for FOSS compliance
+• General playback performance and stability improvements

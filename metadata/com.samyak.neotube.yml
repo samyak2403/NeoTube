@@ -7,7 +7,6 @@ Categories:
 License: GPL-3.0-or-later
 AuthorName: Samyak Kamble
 AuthorEmail: samyakkamble6659@gmail.com
-WebSite: https://github.com/samyak2403/NeoTube
 SourceCode: https://github.com/samyak2403/NeoTube
 IssueTracker: https://github.com/samyak2403/NeoTube/issues
 Changelog: https://github.com/samyak2403/NeoTube/releases
@@ -32,9 +31,21 @@ Builds:
     postbuild: $$reproducible-apk-tools$$/inplace-fix.py --zipalign --page-size 16
       fix-newlines $$OUT$$ 'META-INF/services/*'
 
+  - versionName: 1.0.2
+    versionCode: 3
+    commit: v1.0.2
+    subdir: app
+    gradle:
+      - yes
+    output: build/outputs/apk/neotube/release/*.apk
+    srclibs:
+      - reproducible-apk-tools@v0.3.1
+    postbuild: $$reproducible-apk-tools$$/inplace-fix.py --zipalign --page-size 16
+      fix-newlines $$OUT$$ 'META-INF/services/*'
+
 AllowedAPKSigningKeys: f64e4c9d73db988eda995d0809b574bf59ed713802b0d21dbd999b1e92edc26d
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
-CurrentVersion: 1.0.1
-CurrentVersionCode: 2
+CurrentVersion: 1.0.2
+CurrentVersionCode: 3
