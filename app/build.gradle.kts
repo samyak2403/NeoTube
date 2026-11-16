@@ -23,8 +23,8 @@ android {
         applicationId = "com.samyak.neotube"
         minSdk = 24
         targetSdk = 36
-        versionCode = 3
-        versionName = "1.0.2"
+        versionCode = 4
+        versionName = "1.0.3"
 
         val poTokenGoogleApiKey = (project.findProperty("poTokenGoogleApiKey") as? String)
             ?: rootLocalProperties.getProperty("poTokenGoogleApiKey")
@@ -71,37 +71,12 @@ android {
         compose = true
     }
 
-    signingConfigs {
-        create("release") {
-            val localProperties = Properties()
-            val localPropertiesFile = rootProject.file("local.properties")
-            if (localPropertiesFile.exists()) {
-                localPropertiesFile.inputStream().use { localProperties.load(it) }
-            }
-
-            storeFile = rootProject.file("release.keystore")
-            storePassword = (project.findProperty("storePassword") as? String)
-                ?: localProperties.getProperty("storePassword") 
-                ?: System.getenv("STORE_PASSWORD") 
-                ?: ""
-            keyAlias = (project.findProperty("keyAlias") as? String)
-                ?: localProperties.getProperty("keyAlias") 
-                ?: System.getenv("KEY_ALIAS") 
-                ?: ""
-            keyPassword = (project.findProperty("keyPassword") as? String)
-                ?: localProperties.getProperty("keyPassword") 
-                ?: System.getenv("KEY_PASSWORD") 
-                ?: ""
-        }
-    }
-
     buildTypes {
         debug {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
             isDebuggable = true
             isMinifyEnabled = false
-            isShrinkResources = false
         }
         create("nightly") {
             initWith(getByName("release"))
@@ -109,9 +84,9 @@ android {
             versionNameSuffix = "-nightly"
             isDebuggable = false
             isMinifyEnabled = true
-            isShrinkResources = false
+            isShrinkResources = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android.txt"),
+                getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("debug")
@@ -119,19 +94,11 @@ android {
         release {
             isDebuggable = false
             isMinifyEnabled = true
-            isShrinkResources = false
+            isShrinkResources = true
             proguardFiles(
-                getDefaultProguardFile("proguard-android.txt"),
+                getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            val releaseKeystore = try { signingConfigs.getByName("release").storeFile } catch (e: Exception) { null }
-            if (releaseKeystore?.exists() == true) {
-                signingConfig = signingConfigs.getByName("release")
-                println("Using RELEASE signing config with keystore: ${releaseKeystore.absolutePath}")
-            } else {
-                signingConfig = null
-                println("WARNING: Release keystore not found. Building UNSIGNED release APK.")
-            }
         }
     }
 
@@ -186,7 +153,7 @@ dependencies {
     // --- Image Loading ---
     implementation(libs.coil.compose) 
     implementation(libs.picasso)
-    implementation("androidx.palette:palette-ktx:1.0.0")
+    implementation(libs.androidx.palette.ktx)
 
     // --- Dependency Injection ---
     implementation(libs.hilt.android)

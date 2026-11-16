@@ -17,3 +17,7 @@ local.properties
 .idea/deploymentTargetSelector.xml
 *.apk
 /app/neotube
+
+# F-Droid metadata
+/metadata/
+*.yml
