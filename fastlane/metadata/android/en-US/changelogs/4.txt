@@ -1,0 +1,3 @@
+• Enabled resource shrinking and optimized Proguard/R8 rules for smaller app size and faster startup
+• Improved library dependencies compatibility
+• General performance and stability improvements
